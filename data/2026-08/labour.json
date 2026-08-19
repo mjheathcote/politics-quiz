@@ -1,0 +1,43 @@
+{
+  "party": "Labour Party",
+  "partyId": "labour",
+  "asOf": "2026-08-19",
+  "policies": [
+    {
+      "id": "labour-01",
+      "title": "Kickstart economic growth",
+      "statement": "Reform the planning system and back major infrastructure projects to deliver the highest sustained growth in the G7.",
+      "sourceUrl": "https://labour.org.uk/plan-for-change/"
+    },
+    {
+      "id": "labour-02",
+      "title": "Clean energy superpower",
+      "statement": "Set up a publicly owned company, GB Energy, and decarbonise the electricity grid by 2030 to cut bills and boost energy security.",
+      "sourceUrl": "https://labour.org.uk/plan-for-change/"
+    },
+    {
+      "id": "labour-03",
+      "title": "Take back our streets",
+      "statement": "Deliver a Neighbourhood Policing Guarantee, putting thousands more officers and PCSOs on the beat to tackle antisocial behaviour.",
+      "sourceUrl": "https://labour.org.uk/plan-for-change/"
+    },
+    {
+      "id": "labour-04",
+      "title": "An NHS fit for the future",
+      "statement": "Cut NHS waiting lists and shift care from hospitals into local communities, backed by more appointments and digital services.",
+      "sourceUrl": "https://labour.org.uk/plan-for-change/"
+    },
+    {
+      "id": "labour-05",
+      "title": "Break down barriers to opportunity",
+      "statement": "Expand access to childcare and breakfast clubs and raise school standards so background does not determine a child's future.",
+      "sourceUrl": "https://labour.org.uk/plan-for-change/"
+    },
+    {
+      "id": "labour-06",
+      "title": "Secure our borders",
+      "statement": "Establish a Border Security Command with counter-terrorism-style powers to dismantle the criminal gangs behind small boat crossings.",
+      "sourceUrl": "https://labour.org.uk/change/my-plan-for-change/"
+    }
+  ]
+}

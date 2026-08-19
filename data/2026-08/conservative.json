@@ -1,0 +1,43 @@
+{
+  "party": "Conservative Party",
+  "partyId": "conservative",
+  "asOf": "2026-08-19",
+  "policies": [
+    {
+      "id": "conservative-01",
+      "title": "Reform welfare, cut spending",
+      "statement": "Find £47 billion in savings by reforming welfare and getting people back into work, with half of all savings used to reduce the deficit.",
+      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+    },
+    {
+      "id": "conservative-02",
+      "title": "Scrap the 2050 Net Zero target",
+      "statement": "Abandon the legally binding 2050 Net Zero target, expand North Sea oil and gas licensing, and cut household electricity costs.",
+      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+    },
+    {
+      "id": "conservative-03",
+      "title": "Leave the ECHR to control borders",
+      "statement": "Leave the European Convention on Human Rights and launch a BORDERS plan targeting 150,000 removals a year of people with no right to be in the UK.",
+      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+    },
+    {
+      "id": "conservative-04",
+      "title": "Cut property and business taxes",
+      "statement": "Abolish stamp duty on primary residences and scrap business rates to boost home ownership and high street investment.",
+      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+    },
+    {
+      "id": "conservative-05",
+      "title": "Tougher policing and sentencing",
+      "statement": "Put 10,000 more police officers into high-crime hotspots, roll out live facial recognition, and introduce 'Immediate Justice' community sentences.",
+      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+    },
+    {
+      "id": "conservative-06",
+      "title": "Protect core public services",
+      "statement": "Ban smartphones in schools, legislate minimum NHS service levels, and prohibit strikes by doctors that put patients at risk.",
+      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+    }
+  ]
+}

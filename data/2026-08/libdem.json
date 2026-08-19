@@ -1,0 +1,43 @@
+{
+  "party": "Liberal Democrats",
+  "partyId": "libdem",
+  "asOf": "2026-08-19",
+  "policies": [
+    {
+      "id": "libdem-01",
+      "title": "A new Department for Growth Creation",
+      "statement": "Replace the Treasury with a new Department for Growth Creation, based outside London, focused on boosting long-term prosperity.",
+      "sourceUrl": "https://www.libdems.org.uk/news/article/get-britain-growing-again"
+    },
+    {
+      "id": "libdem-02",
+      "title": "Closer trade ties with Europe",
+      "statement": "Negotiate a better UK-EU trading relationship to cut red tape for business and raise billions a year for public services.",
+      "sourceUrl": "https://www.libdems.org.uk/news/article/get-britain-growing-again"
+    },
+    {
+      "id": "libdem-03",
+      "title": "Fix the social care crisis",
+      "statement": "Introduce free personal care for older and disabled people, funded through a cross-party long-term settlement for social care.",
+      "sourceUrl": "https://www.libdems.org.uk/"
+    },
+    {
+      "id": "libdem-04",
+      "title": "Proportional representation",
+      "statement": "Replace Westminster's first-past-the-post voting system with a proportional one so every vote counts equally.",
+      "sourceUrl": "https://www.libdems.org.uk/"
+    },
+    {
+      "id": "libdem-05",
+      "title": "Stop sewage dumping",
+      "statement": "Impose automatic fines on water companies that dump sewage into rivers and seas, with the money used to clean up waterways.",
+      "sourceUrl": "https://www.libdems.org.uk/"
+    },
+    {
+      "id": "libdem-06",
+      "title": "Mental health support for all",
+      "statement": "Guarantee a dedicated mental health professional in every school and a walk-in mental health hub in every community.",
+      "sourceUrl": "https://www.libdems.org.uk/"
+    }
+  ]
+}

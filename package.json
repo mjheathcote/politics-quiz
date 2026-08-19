@@ -1,0 +1,30 @@
+{
+  "name": "politics-quiz",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "UK Party Policy Alignment Quiz — politics.ryetown.uk",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "validate:data": "node scripts/validate.mjs",
+    "fetch:policies": "node scripts/fetch-policies.mjs",
+    "fetch:policies:mock": "node scripts/fetch-policies.mjs --mock",
+    "test": "node --test src/lib/*.test.ts",
+    "test:e2e": "node scripts/e2e-smoke.mjs",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "astro": "^4.16.0"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "playwright": "^1.62.1",
+    "wrangler": "^4.24.0"
+  }
+}

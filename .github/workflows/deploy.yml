@@ -1,0 +1,42 @@
+name: Deploy to Cloudflare Workers
+
+# Runs on every push to main — including the monthly data-pipeline bot's commits
+# from update-policies.yml — and deploys straight to Cloudflare, no manual
+# approval step, matching "commit triggers a rebuild automatically." This job
+# builds + validates + tests itself (rather than depending on the separate CI
+# workflow finishing first, which GitHub Actions doesn't make trivial to wait
+# on), so a broken build never gets deployed even though there's no human gate.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {} # manual redeploy from the Actions tab if ever needed
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - run: npm ci
+      - run: npm run validate:data
+      - run: npm test
+      - run: npm run build
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy

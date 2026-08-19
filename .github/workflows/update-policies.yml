@@ -1,0 +1,62 @@
+name: Update party policies (monthly)
+
+# Fully automated data pipeline, no human review step: calls the Anthropic API
+# once per party, validates the result, and pushes straight to main. deploy.yml
+# runs on every push to main (including this workflow's own commits), so a
+# successful run here is what triggers the new month's data going live — see
+# README's "Hosting/deployment" section.
+on:
+  schedule:
+    # 06:00 UTC on the 1st of every month. GitHub Actions cron can lag by up to
+    # ~15 min at busy times; that's fine here, nothing time-critical depends on
+    # the exact minute.
+    - cron: "0 6 1 * *"
+  workflow_dispatch: {} # lets you trigger a run manually from the Actions tab
+
+permissions:
+  contents: write # needed to commit + push data/YYYY-MM/*.json directly to main
+
+concurrency:
+  group: update-policies
+  cancel-in-progress: false
+
+jobs:
+  update-policies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # fetch-policies.mjs's fallback logic reads prior data/YYYY-MM/ dirs
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run the data pipeline (fetch + validate + fallback, all 5 parties)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run fetch:policies
+
+      # Belt-and-braces: fetch-policies.mjs already validates before writing
+      # anything, this just re-checks what actually landed on disk before commit.
+      - name: Validate the resulting month's data
+        run: npm run validate:data
+
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name "politics-quiz-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No data changes this run (e.g. re-run in the same month with identical results) — nothing to commit."
+            exit 0
+          fi
+          MONTH=$(date -u +%Y-%m)
+          git add "data/${MONTH}"
+          git commit -m "Update party policies for ${MONTH}"
+          git push origin HEAD:main

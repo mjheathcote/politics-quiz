@@ -1,0 +1,27 @@
+name: CI
+
+# Runs on pull requests only. Pushes to main are covered by deploy.yml, which
+# runs this same validate/test/build sequence itself before deploying — so this
+# workflow doesn't duplicate that on every push, it just gives PRs (if you ever
+# use them) a green/red check before merging. Either way this never gates or
+# blocks the actual deploy: there's no required-check branch protection here,
+# and deploy.yml deploys straight from main on every push regardless, matching
+# the "no manual review steps anywhere" requirement.
+on:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - run: npm ci
+      - run: npm run validate:data
+      - run: npm test
+      - run: npm run build

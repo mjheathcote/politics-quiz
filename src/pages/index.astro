@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+import { getQuizPool } from "../lib/loadPolicies.ts";
+
+const { quizStatements } = getQuizPool();
+
+// Only { id, statement } reaches this point — buildQuizPool() (called inside
+// getQuizPool()) already stripped partyId/sourceUrl at the data-fetching layer,
+// so there is nothing further to redact here. Blanket-escape "<" so a policy
+// statement can never prematurely close this script tag.
+const quizStatementsJson = JSON.stringify(quizStatements).replace(/</g, "\\u003c");
+---
+<Base title="Which UK party matches you? — politics.ryetown.uk">
+  <div id="app">
+    <noscript>This quiz needs JavaScript enabled to run.</noscript>
+  </div>
+  <script type="application/json" id="quiz-data" set:html={quizStatementsJson} />
+  <script>
+    // No attributes other than none at all (specifically, no explicit
+    // type="module") — that's what tells Astro to process + bundle this via
+    // Vite instead of shipping it byte-for-byte with an unresolvable relative
+    // import. See https://docs.astro.build/en/guides/client-side-scripts/.
+    import { mountQuizApp } from "../lib/quizApp.ts";
+
+    const dataEl = document.getElementById("quiz-data")!;
+    const statements = JSON.parse(dataEl.textContent!);
+    const root = document.getElementById("app")!;
+    mountQuizApp(root, statements);
+  </script>
+</Base>

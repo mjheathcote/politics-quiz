@@ -1,0 +1,43 @@
+{
+  "party": "Reform UK",
+  "partyId": "reform",
+  "asOf": "2026-08-19",
+  "policies": [
+    {
+      "id": "reform-01",
+      "title": "Stop the boats",
+      "statement": "Deploy the armed forces to intercept migrant boats in the English Channel and turn back or stop illegal crossings before they land.",
+      "sourceUrl": "https://www.reformparty.uk/policies"
+    },
+    {
+      "id": "reform-02",
+      "title": "Mass deportation programme",
+      "statement": "Leave the European Convention on Human Rights and run a five-year programme to identify, detain and deport people with no right to remain, using up to five flights a day.",
+      "sourceUrl": "https://www.reformparty.uk/policies"
+    },
+    {
+      "id": "reform-03",
+      "title": "Scrap indefinite leave to remain",
+      "statement": "End existing long-term visa routes and replace them with five-year renewable visas that require a higher salary and fluent English.",
+      "sourceUrl": "https://www.reformparty.uk/policies"
+    },
+    {
+      "id": "reform-04",
+      "title": "Scrap Net Zero policies",
+      "statement": "Scrap Net Zero policies, expand domestic energy production including North Sea oil and gas, and cut household energy bills.",
+      "sourceUrl": "https://www.reformparty.uk/policies"
+    },
+    {
+      "id": "reform-05",
+      "title": "Make work pay",
+      "statement": "Cut taxes on workers' pay and restructure the welfare system so that being in work always pays more than claiming benefits.",
+      "sourceUrl": "https://www.reformparty.uk/policies"
+    },
+    {
+      "id": "reform-06",
+      "title": "Restore British sovereignty",
+      "statement": "Ensure British law and courts take precedence over foreign courts and international institutions in domestic decision-making.",
+      "sourceUrl": "https://www.reformparty.uk/policies"
+    }
+  ]
+}
