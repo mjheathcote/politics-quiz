@@ -1,43 +1,43 @@
 {
   "party": "Labour Party",
   "partyId": "labour",
-  "asOf": "2026-08-19",
+  "asOf": "2026-08-20",
   "policies": [
     {
       "id": "labour-01",
-      "title": "Kickstart economic growth",
-      "statement": "Reform the planning system and back major infrastructure projects to deliver the highest sustained growth in the G7.",
-      "sourceUrl": "https://labour.org.uk/plan-for-change/"
+      "title": "Economic growth",
+      "statement": "Achieve the highest sustained growth in the G7 to increase household incomes and fund better public services.",
+      "sourceUrl": "https://nationalpolicyforum.labour.org.uk/wp-content/uploads/2026/03/NPF26_COMPLETE.pdf"
     },
     {
       "id": "labour-02",
-      "title": "Clean energy superpower",
-      "statement": "Set up a publicly owned company, GB Energy, and decarbonise the electricity grid by 2030 to cut bills and boost energy security.",
-      "sourceUrl": "https://labour.org.uk/plan-for-change/"
+      "title": "Clean power by 2030",
+      "statement": "Deliver at least 95% clean electricity by 2030 through renewable energy expansion and the establishment of Great British Energy.",
+      "sourceUrl": "https://feeds.bbci.co.uk/news/articles/cn9gxvppxqpo"
     },
     {
       "id": "labour-03",
-      "title": "Take back our streets",
-      "statement": "Deliver a Neighbourhood Policing Guarantee, putting thousands more officers and PCSOs on the beat to tackle antisocial behaviour.",
-      "sourceUrl": "https://labour.org.uk/plan-for-change/"
+      "title": "NHS recovery",
+      "statement": "Reduce waiting lists by treating 92% of NHS patients within 18 weeks and increase annual appointments.",
+      "sourceUrl": "https://nationalpolicyforum.labour.org.uk/wp-content/uploads/2026/03/NPF26_COMPLETE.pdf"
     },
     {
       "id": "labour-04",
-      "title": "An NHS fit for the future",
-      "statement": "Cut NHS waiting lists and shift care from hospitals into local communities, backed by more appointments and digital services.",
-      "sourceUrl": "https://labour.org.uk/plan-for-change/"
+      "title": "Housebuilding",
+      "statement": "Build 1.5 million new homes and fast-track planning decisions on at least 150 major infrastructure projects.",
+      "sourceUrl": "https://feeds.bbci.co.uk/news/articles/cn9gxvppxqpo"
     },
     {
       "id": "labour-05",
-      "title": "Break down barriers to opportunity",
-      "statement": "Expand access to childcare and breakfast clubs and raise school standards so background does not determine a child's future.",
-      "sourceUrl": "https://labour.org.uk/plan-for-change/"
+      "title": "Youth employment guarantee",
+      "statement": "Provide six months of paid work for every 18-21 year old who has been on Universal Credit and searching for work for 18 months.",
+      "sourceUrl": "https://nationalpolicyforum.labour.org.uk/wp-content/uploads/2026/03/NPF26_COMPLETE.pdf"
     },
     {
       "id": "labour-06",
-      "title": "Secure our borders",
-      "statement": "Establish a Border Security Command with counter-terrorism-style powers to dismantle the criminal gangs behind small boat crossings.",
-      "sourceUrl": "https://labour.org.uk/change/my-plan-for-change/"
+      "title": "Immigration reform",
+      "statement": "Restore order in the immigration system to build a firm and fair approach that addresses declining public trust.",
+      "sourceUrl": "https://nationalpolicyforum.labour.org.uk/wp-content/uploads/2026/03/NPF26_COMPLETE.pdf"
     }
   ]
 }

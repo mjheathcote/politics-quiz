@@ -1,43 +1,43 @@
 {
   "party": "Conservative Party",
   "partyId": "conservative",
-  "asOf": "2026-08-19",
+  "asOf": "2026-08-20",
   "policies": [
     {
       "id": "conservative-01",
-      "title": "Reform welfare, cut spending",
-      "statement": "Find £47 billion in savings by reforming welfare and getting people back into work, with half of all savings used to reduce the deficit.",
-      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+      "title": "Withdraw from ECHR",
+      "statement": "Repeal the Human Rights Act and withdraw from the European Convention on Human Rights to enable deportation of individuals without a right to remain in the UK.",
+      "sourceUrl": "https://www.britbrief.co.uk/politics/westminster/tories-propose-echr-exit-north-sea-drilling-in-alternative-speech.html"
     },
     {
       "id": "conservative-02",
-      "title": "Scrap the 2050 Net Zero target",
-      "statement": "Abandon the legally binding 2050 Net Zero target, expand North Sea oil and gas licensing, and cut household electricity costs.",
-      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+      "title": "Resume North Sea drilling",
+      "statement": "Remove legal obstacles preventing approval of new oil and gas projects in the North Sea through a Get Britain Drilling Bill.",
+      "sourceUrl": "https://www.britbrief.co.uk/politics/westminster/tories-propose-echr-exit-north-sea-drilling-in-alternative-speech.html"
     },
     {
       "id": "conservative-03",
-      "title": "Leave the ECHR to control borders",
-      "statement": "Leave the European Convention on Human Rights and launch a BORDERS plan targeting 150,000 removals a year of people with no right to be in the UK.",
-      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+      "title": "Welfare spending cuts",
+      "statement": "Reinstate the two-child benefit cap in full and restrict disability payments to those with lower-level mental health conditions.",
+      "sourceUrl": "https://www.cityam.com/tories-pledge-to-slash-tax-and-red-tape-in-alternative-kings-speech/"
     },
     {
       "id": "conservative-04",
-      "title": "Cut property and business taxes",
-      "statement": "Abolish stamp duty on primary residences and scrap business rates to boost home ownership and high street investment.",
-      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+      "title": "Tax cuts",
+      "statement": "Cut state spending to deliver tax cuts, including complete abolition of stamp duty.",
+      "sourceUrl": "https://www.conservatives.com/news/conference-policy-announcements"
     },
     {
       "id": "conservative-05",
-      "title": "Tougher policing and sentencing",
-      "statement": "Put 10,000 more police officers into high-crime hotspots, roll out live facial recognition, and introduce 'Immediate Justice' community sentences.",
-      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+      "title": "Increase policing",
+      "statement": "Hire 10,000 additional police officers and triple stop-and-search powers to tackle crime.",
+      "sourceUrl": "https://www.conservatives.com/news/conference-policy-announcements"
     },
     {
       "id": "conservative-06",
-      "title": "Protect core public services",
-      "statement": "Ban smartphones in schools, legislate minimum NHS service levels, and prohibit strikes by doctors that put patients at risk.",
-      "sourceUrl": "https://www.conservatives.com/our-plan-for-britain"
+      "title": "Scrap business rates",
+      "statement": "Remove business rates for high street businesses and repeal recent workers' rights reforms.",
+      "sourceUrl": "https://www.cityam.com/tories-pledge-to-slash-tax-and-red-tape-in-alternative-kings-speech/"
     }
   ]
 }

@@ -1,43 +1,43 @@
 {
   "party": "Green Party",
   "partyId": "green",
-  "asOf": "2026-08-19",
+  "asOf": "2026-08-20",
   "policies": [
     {
       "id": "green-01",
-      "title": "Public ownership of water",
-      "statement": "Bring water companies into public ownership to end privatisation failures and stop sewage being dumped into rivers and seas.",
-      "sourceUrl": "https://policy.greenparty.org.uk/"
+      "title": "Affordable housing and rent controls",
+      "statement": "Build large-scale social housing and introduce rent controls to address the housing crisis in urban areas.",
+      "sourceUrl": "https://factually.co/fact-checks/politics/green-party-2026-policies-ca09df"
     },
     {
       "id": "green-02",
-      "title": "A wealth tax on the very richest",
-      "statement": "Introduce an annual wealth tax on assets over £10 million to fund public services and reduce inequality.",
-      "sourceUrl": "https://policy.greenparty.org.uk/"
+      "title": "Net zero by 2040",
+      "statement": "Achieve net zero carbon emissions by 2040 through rapid transition to renewable energy and ending new North Sea oil and gas drilling.",
+      "sourceUrl": "https://factually.co/fact-checks/politics/green-party-manifesto-promises-next-uk-general-election-after-2026-f18561"
     },
     {
       "id": "green-03",
-      "title": "Rent controls and a rent freeze",
-      "statement": "Freeze rents for a year and introduce permanent rent controls, alongside stronger rights for renters against unfair eviction.",
-      "sourceUrl": "https://policy.greenparty.org.uk/"
+      "title": "Public ownership of utilities",
+      "statement": "Bring railways, water companies, and major energy companies into public ownership to reduce costs for consumers.",
+      "sourceUrl": "https://simple.wikipedia.org/wiki/Green_Party_of_England_and_Wales"
     },
     {
       "id": "green-04",
-      "title": "Proportional representation and workers' rights",
-      "statement": "Introduce proportional representation for all UK elections and a Workers' Charter guaranteeing stronger rights from day one of employment.",
-      "sourceUrl": "https://policy.greenparty.org.uk/"
+      "title": "£15 minimum wage",
+      "statement": "Introduce a £15 per hour minimum wage for all workers regardless of age by April 2027.",
+      "sourceUrl": "https://greenparty.org.uk/workerscharter/"
     },
     {
       "id": "green-05",
-      "title": "Rapid shift to renewable energy",
-      "statement": "Accelerate the switch to renewable energy and fund large-scale nature restoration, including rewilding and river restoration.",
-      "sourceUrl": "https://policy.greenparty.org.uk/"
+      "title": "NHS funding and access",
+      "statement": "Increase NHS funding to guarantee access to NHS dentists and same-day GP appointments for urgent needs.",
+      "sourceUrl": "https://greenparty.org.uk/about/our-manifesto/building-a-fairer-healthier-country/"
     },
     {
       "id": "green-06",
-      "title": "Cheaper, greener transport",
-      "statement": "Increase funding for buses and cut speed limits on motorways to 55mph to reduce transport costs and emissions.",
-      "sourceUrl": "https://policy.greenparty.org.uk/"
+      "title": "Nature restoration and clean air",
+      "statement": "Enshrine the right to clean air through a Clean Air Act and restore rivers using nature-based flood solutions.",
+      "sourceUrl": "https://factually.co/fact-checks/politics/green-party-manifesto-promises-next-uk-general-election-after-2026-f18561"
     }
   ]
 }

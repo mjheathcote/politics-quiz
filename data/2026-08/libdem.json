@@ -1,43 +1,43 @@
 {
   "party": "Liberal Democrats",
   "partyId": "libdem",
-  "asOf": "2026-08-19",
+  "asOf": "2026-08-20",
   "policies": [
     {
       "id": "libdem-01",
-      "title": "A new Department for Growth Creation",
-      "statement": "Replace the Treasury with a new Department for Growth Creation, based outside London, focused on boosting long-term prosperity.",
-      "sourceUrl": "https://www.libdems.org.uk/news/article/get-britain-growing-again"
+      "title": "GP access guarantee",
+      "statement": "Guarantee everyone the right to see a GP within one week, or within 24 hours if the need is urgent.",
+      "sourceUrl": "https://www.libdems.org.uk/press/release/lib-dems-are-the-first-political-party-to-adopt-pre-manifesto-with-right-to-see-a-gp-and-health-services-at-its-heart"
     },
     {
       "id": "libdem-02",
-      "title": "Closer trade ties with Europe",
-      "statement": "Negotiate a better UK-EU trading relationship to cut red tape for business and raise billions a year for public services.",
-      "sourceUrl": "https://www.libdems.org.uk/news/article/get-britain-growing-again"
+      "title": "Free personal care",
+      "statement": "Introduce free personal care for older and disabled people in their own homes, funded by reversing tax cuts to major banks.",
+      "sourceUrl": "https://feeds.bbci.co.uk/news/articles/cjmmww3ne8wo"
     },
     {
       "id": "libdem-03",
-      "title": "Fix the social care crisis",
-      "statement": "Introduce free personal care for older and disabled people, funded through a cross-party long-term settlement for social care.",
-      "sourceUrl": "https://www.libdems.org.uk/"
+      "title": "End A&E 12-hour waits",
+      "statement": "Put a legal duty on the Health Secretary to end 12-hour waits in accident and emergency departments by reserving care home places and funding more hospital discharge packages.",
+      "sourceUrl": "https://www.libdems.org.uk/news/article/our-plan-to-end-the-ae-corridor-crisis"
     },
     {
       "id": "libdem-04",
       "title": "Proportional representation",
-      "statement": "Replace Westminster's first-past-the-post voting system with a proportional one so every vote counts equally.",
-      "sourceUrl": "https://www.libdems.org.uk/"
+      "statement": "Replace the first-past-the-post electoral system with proportional representation for electing MPs and councillors in England.",
+      "sourceUrl": "https://factually.co/fact-checks/politics/lib-dem-party-policies-2026-4f0529"
     },
     {
       "id": "libdem-05",
-      "title": "Stop sewage dumping",
-      "statement": "Impose automatic fines on water companies that dump sewage into rivers and seas, with the money used to clean up waterways.",
-      "sourceUrl": "https://www.libdems.org.uk/"
+      "title": "Community policing guarantee",
+      "statement": "Restore community policing and guarantee that every burglary will be attended by police and properly investigated.",
+      "sourceUrl": "https://www.libdems.org.uk/news/article/speech-ed-davey-launches-liberal-democrat-manifesto-with-plan-to-save-the-nhs"
     },
     {
       "id": "libdem-06",
-      "title": "Mental health support for all",
-      "statement": "Guarantee a dedicated mental health professional in every school and a walk-in mental health hub in every community.",
-      "sourceUrl": "https://www.libdems.org.uk/"
+      "title": "Department for Growth",
+      "statement": "Break up the Treasury and create a new Department for Growth based in Birmingham to drive regional economic rebalancing.",
+      "sourceUrl": "https://factually.co/fact-checks/politics/lib-dem-party-policies-2026-4f0529"
     }
   ]
 }
