@@ -96,6 +96,11 @@ Requirements:
 - Exactly 6 entries in "policies", ids "${party.id}-01" through "${party.id}-06".
 - Every "sourceUrl" must be a real URL you found via search, not invented.
 - "statement" must be neutral and factual, not persuasive copy — a reader should not be able to tell which party it's from just by tone.
+- Each "statement" must cover exactly ONE policy idea — one topic, one action. Do not
+  bundle multiple distinct policies into a single statement with "and"/commas (e.g. don't
+  write "scrap X, expand Y, and cut Z" — that's three policies; pick the single most
+  important one and make it its own statement, or split into separate entries if two of
+  your 6 picks would otherwise collapse into one bundled sentence).
 - Do not include any party name, logo reference, or identifying phrase inside "statement" or "title" — those fields will be shown to quiz users without knowing which party they belong to.
 - Output valid JSON only. No \`\`\`json fences, no leading/trailing text.`;
 }

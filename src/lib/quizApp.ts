@@ -52,8 +52,13 @@ export function mountQuizApp(root: HTMLElement, initialStatements: QuizStatement
         UK-wide parties — one at a time, with no party name attached. Rate how much
         you agree with each. At the end we'll reveal which party you're most (and
         least) aligned with, and why.</p>
+        <p>Try to judge each statement on its own terms — not by which party you
+        think said it, any existing opinions you have of them, or how you feel
+        about individual politicians' personalities.</p>
         <p>Nothing is sent anywhere until you finish. Your answers stay in this
         browser tab.</p>
+        <p class="caveat">This is just a bit of fun, not a voting guide — please do
+        your own research before you vote.</p>
       </div>
       <button class="primary-button" type="button" style="margin-top:1.25rem" id="start-btn">Start the quiz</button>
     `;
@@ -172,9 +177,27 @@ export function mountQuizApp(root: HTMLElement, initialStatements: QuizStatement
       </div>
     `;
 
-    if (results.best) wrap.appendChild(renderMatchCard(results.best, "best", "Best match"));
+    if (results.bestTie.length > 1) {
+      const tieNote = document.createElement("p");
+      tieNote.className = "caveat";
+      tieNote.textContent = `Your answers are evenly split — you scored ${results.bestTie.length} parties the same, so there's no single best match:`;
+      wrap.appendChild(tieNote);
+      for (const m of results.bestTie) wrap.appendChild(renderMatchCard(m, "best", "Joint best match"));
+    } else if (results.best) {
+      wrap.appendChild(renderMatchCard(results.best, "best", "Best match"));
+    }
+
     if (results.secondBest) wrap.appendChild(renderMatchCard(results.secondBest, "second", "Second-best match"));
-    if (results.worst) wrap.appendChild(renderMatchCard(results.worst, "worst", "Furthest from your views"));
+
+    if (results.worstTie.length > 1) {
+      const tieNote = document.createElement("p");
+      tieNote.className = "caveat";
+      tieNote.textContent = `You're also equally distant from ${results.worstTie.length} parties:`;
+      wrap.appendChild(tieNote);
+      for (const m of results.worstTie) wrap.appendChild(renderMatchCard(m, "worst", "Joint furthest from your views"));
+    } else if (results.worst) {
+      wrap.appendChild(renderMatchCard(results.worst, "worst", "Furthest from your views"));
+    }
 
     if (!results.best) {
       const none = document.createElement("p");
@@ -195,9 +218,23 @@ export function mountQuizApp(root: HTMLElement, initialStatements: QuizStatement
     restartBtn.addEventListener("click", () => window.location.reload());
     wrap.appendChild(restartBtn);
 
+    const closingNote = document.createElement("div");
+    closingNote.className = "intro-card";
+    closingNote.style.marginTop = "2rem";
+    closingNote.innerHTML = `
+      <p>Whatever your result, most people want broadly the same things — safety,
+      prosperity, a healthy environment — we mostly disagree on priorities and how
+      to get there. Try to see things from the other side's perspective, and don't
+      let politics turn disagreement into hatred.</p>
+      <p>Before backing any policy, look into the evidence behind it — plenty of
+      policy is driven by ideology rather than evidence of what actually works.
+      Check the evidence, then decide. Take the ideology out of politics.</p>
+    `;
+    wrap.appendChild(closingNote);
+
     const footer = document.createElement("footer");
     footer.className = "app-footer";
-    footer.textContent = `Based on each party's stated policies as of the latest monthly update. For fun, not a voting recommendation.`;
+    footer.textContent = `Based on each party's stated policies as of the latest update. For fun, not a voting recommendation.`;
     wrap.appendChild(footer);
 
     return wrap;

@@ -249,4 +249,40 @@ describe("buildResults (end-to-end)", () => {
     assert.equal(results.rankings.length, 5);
     assert.ok(results.rankings.every((r) => r.averageScore === null));
   });
+
+  test("reports a tie for best when two parties land on the same rounded score, instead of picking one", () => {
+    const answers: Answers = {};
+    // Both green and reform average to exactly 4.5.
+    const green = idsFor("green");
+    const reform = idsFor("reform");
+    [5, 5, 5, 4, 4, 4].forEach((score, i) => (answers[green[i]] = score as ScaleValue));
+    [5, 5, 5, 4, 4, 4].forEach((score, i) => (answers[reform[i]] = score as ScaleValue));
+    for (const id of idsFor("labour")) answers[id] = 3;
+    for (const id of idsFor("conservative")) answers[id] = 3;
+    for (const id of idsFor("libdem")) answers[id] = 3;
+
+    const results = buildResults(answers, answerKey);
+    assert.equal(results.bestTie.length, 2);
+    assert.deepEqual(
+      new Set(results.bestTie.map((m) => m.partyId)),
+      new Set(["green", "reform"]),
+    );
+    // "second-best" is ambiguous when the top spot is tied.
+    assert.equal(results.secondBest, null);
+    // best still points at one of the tied parties, for callers that don't care about ties.
+    assert.ok(["green", "reform"].includes(results.best!.partyId));
+  });
+
+  test("worst is not reported when it would be tied with every other scored party", () => {
+    const answers: Answers = {};
+    const [greenId] = idsFor("green");
+    const [reformId] = idsFor("reform");
+    answers[greenId] = 5;
+    answers[reformId] = 5;
+
+    const results = buildResults(answers, answerKey);
+    assert.equal(results.bestTie.length, 2);
+    assert.equal(results.worstTie.length, 0);
+    assert.equal(results.worst, null);
+  });
 });

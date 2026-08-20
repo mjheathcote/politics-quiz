@@ -181,6 +181,38 @@ function toMatch(score: PartyScore, answers: Answers, answerKey: AnswerKey, dire
   };
 }
 
+/** Rounds to the same precision the UI displays (`toFixed(1)`), so a tie is
+ * defined by what the user actually sees, not by imperceptible float noise. */
+function roundForDisplay(score: number): number {
+  return Math.round(score * 10) / 10;
+}
+
+/** Longest prefix of a descending-sorted, fully-scored list that shares the
+ * leader's rounded score. */
+function tiedPrefix(sortedScored: PartyScore[]): PartyScore[] {
+  if (sortedScored.length === 0) return [];
+  const top = roundForDisplay(sortedScored[0].averageScore!);
+  const group: PartyScore[] = [];
+  for (const s of sortedScored) {
+    if (roundForDisplay(s.averageScore!) !== top) break;
+    group.push(s);
+  }
+  return group;
+}
+
+/** Longest suffix of a descending-sorted, fully-scored list that shares the
+ * last party's rounded score. */
+function tiedSuffix(sortedScored: PartyScore[]): PartyScore[] {
+  if (sortedScored.length === 0) return [];
+  const bottom = roundForDisplay(sortedScored[sortedScored.length - 1].averageScore!);
+  const group: PartyScore[] = [];
+  for (let i = sortedScored.length - 1; i >= 0; i--) {
+    if (roundForDisplay(sortedScored[i].averageScore!) !== bottom) break;
+    group.unshift(sortedScored[i]);
+  }
+  return group;
+}
+
 /**
  * Assembles the full reveal: ranked list, best/second-best/worst matches each
  * with their driving statements (partyId + sourceUrl reintroduced here, and only
@@ -191,17 +223,27 @@ export function buildResults(answers: Answers, answerKey: AnswerKey): QuizResult
   const rankings = rankParties(scoreParties(answers, answerKey));
   const scored = rankings.filter((r) => r.averageScore !== null);
 
-  const best = scored[0] ? toMatch(scored[0], answers, answerKey, "best") : null;
-  const secondBest = scored[1] ? toMatch(scored[1], answers, answerKey, "best") : null;
-  // Worst is meaningless if there's only one scored party (best === worst by
-  // definition); require at least 2 distinct scored parties.
-  const worst =
-    scored.length >= 2 ? toMatch(scored[scored.length - 1], answers, answerKey, "worst") : null;
+  const bestGroup = tiedPrefix(scored);
+  const bestTie = bestGroup.map((s) => toMatch(s, answers, answerKey, "best"));
+  const best = bestTie[0] ?? null;
+
+  // "Second-best" only makes sense when there's a single, unambiguous leader.
+  const secondBest =
+    bestGroup.length <= 1 && scored[1] ? toMatch(scored[1], answers, answerKey, "best") : null;
+
+  // Worst is meaningless if there's only one scored party, or if every scored
+  // party is tied with the leader (nothing to contrast against).
+  let worstGroup = scored.length >= 2 ? tiedSuffix(scored) : [];
+  if (worstGroup.length === scored.length && bestGroup.length === scored.length) worstGroup = [];
+  const worstTie = worstGroup.map((s) => toMatch(s, answers, answerKey, "worst"));
+  const worst = worstTie[0] ?? null;
 
   return {
     rankings,
+    bestTie,
     best,
     secondBest,
+    worstTie,
     worst,
     lowConfidence: totalAnswered < LOW_CONFIDENCE_THRESHOLD,
   };

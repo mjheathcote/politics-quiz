@@ -92,8 +92,17 @@ export interface PartyMatch {
 
 export interface QuizResults {
   rankings: PartyScore[];
+  /** All parties tied for the top (rounded) score — length 1 in the normal case,
+   * length 2+ when the user is genuinely split between parties. `best` is always
+   * `bestTie[0] ?? null`, kept for convenience when the caller doesn't care about ties. */
+  bestTie: PartyMatch[];
   best: PartyMatch | null;
+  /** Only meaningful when there's no tie for best (bestTie.length === 1) — the next
+   * distinct-scoring party. Null when best is tied, since "second" is ambiguous then. */
   secondBest: PartyMatch | null;
+  /** All parties tied for the bottom (rounded) score. Empty when there's no
+   * distinct worst (e.g. everyone tied, or fewer than 2 scored parties). */
+  worstTie: PartyMatch[];
   worst: PartyMatch | null;
   /** True if the user answered too few statements (e.g. all from one party, or a
    * near-empty quiz) for the ranking to be meaningful. UI should show a caveat. */
